@@ -10,6 +10,25 @@ The models have been designed by engineers using [MaTeLo](http://www.all4tec.net
 
 We encoded the Sferion(TM)  landing symbology function models using our formalisms: the usage model has been flattened to remove hierarchy (by hand in 1/2 day); the OVM model has been translated to a feature model (by hand in 1/2 day); and the mapping between features and behaviour has been encoded using an FTS, generated from the MaTeLo usage model, the OVM model and the MPLM mapping model (in 1 day).
 
+### Reference
+
+Devroey, X., Perrouin, G., Cordy, M., Samih, H., Legay, A., Schobbens, P.-Y. and Heymans, P. 2017. [Statistical prioritization for software product line testing: an experience report](https://doi.org/10.1007/s10270-015-0479-8). Software & Systems Modeling. 16, 1 (Feb. 2017), 153–171.
+
+```
+@article{Devroey2017,
+	author = {Devroey, Xavier and Perrouin, Gilles and Cordy, Maxime and Samih, Hamza and Legay, Axel and Schobbens, Pierre-Yves and Heymans, Patrick},
+	title = {{Statistical prioritization for software product line testing: an experience report}},
+	journal = {Software {\&} Systems Modeling},
+	volume = {16},
+	number = {1},
+	pages = {153--171},
+	month = {feb},
+	year = {2017}
+	publisher = {Springer},
+	doi = {10.1007/s10270-015-0479-8},
+}
+```
+
 ## Feature Model
 
 ![Sferion(TM) Aero UC5 Feature Model](aerouc5-fm.png)
