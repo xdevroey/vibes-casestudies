@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts>
+	<start>Init</start>
+	<states>
+		<state id="Init">
+			<transition action="insert_card" target="Card_in" proba="1.0" />
+		</state>
+		<state id="Card_in">
+			<transition action="initSchema" target="state3" proba="1.0" />
+		</state>
+		<state id="state3">
+			<transition action="init_schema" target="App_init" proba="0.8" />
+			<transition action="abort" target="Aborted" proba="0.2" />
+		</state>
+		<state id="App_init">
+			<transition action="check_signature" target="CH_verified" proba="0.15" />
+			<transition action="check_PIN_online" target="CH_verified" proba="0.6" />
+			<transition action="check_PIN_offline" target="CH_verified" proba="0.25" />
+		</state>
+		<state id="Aborted">
+			<transition action="remove_card" target="Init" proba="1.0" />
+		</state>
+		<state id="CH_verified">
+			<transition action="no_go" target="NO_GO" proba="0.25" />
+			<transition action="go_online" target="Go_online" proba="0.55" />
+			<transition action="go_offline" target="Go_offline" proba="0.2" />
+		</state>
+		<state id="NO_GO">
+			<transition action="abort" target="Aborted" proba="1.0" />
+		</state>
+		<state id="Go_online">
+			<transition action="ask_issuer" target="Issuer_responded" proba="1.0" />
+		</state>
+		<state id="Issuer_responded">
+			<transition action="issuer_accepts" target="Completed" proba="0.7" />
+			<transition action="issuer_rejects" target="Aborted" proba="0.3" />
+		</state>
+		<state id="Completed">
+			<transition action="remove_card" target="Init" proba="1.0" />
+		</state>
+		<state id="Go_offline">
+			<transition action="accepts" target="Completed" proba="1.0" />
+		</state>
+	</states>
+</ts>

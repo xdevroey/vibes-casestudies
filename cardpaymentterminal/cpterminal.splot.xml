@@ -1,0 +1,67 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Nov 6, 2015 - 8:40 AM  -->
+<feature_model name="Card Payment Terminal">
+<meta>
+<data name="description">Describes card payment terminal with direct debit and credit card possibilities</data>
+<data name="creator">Xavier Devroey</data>
+<data name="address"></data>
+<data name="email">xavier.devroey@unamur.be</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">PReCISE, University of Namur</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+<!--
+Feature Model Statistics
+#Features	21
+#Mandatory	4
+#Optional	2
+#XOR groups	0
+#OR groups	5
+#Grouped	14
+#Cross-Tree Constraints (CTC)	4
+CTCR (%)	0.38
+#CTC distinct vars	8
+CTC clause density	0.50
+Feature Model Analysis
+Consistency	Consistent
+Dead Features	None
+Core Features	4 feature(s)
+Valid Configurations	4,774
+-->
+</meta>
+<feature_tree>
+:r CPTerminal(CPTerminal)
+	:m PaymentSchema(PaymentSchema)
+		:g (_r_1_5) [1,*] 
+			: DirectDebit(DirectDebit)
+				:g (_r_1_5_6_8) [1,*] 
+					: DebitCard(DebitCard)
+					: EPurse(EPurse)
+					: PrepaidCard(PrepaidCard)
+			: CreditCard(CreditCard)
+	:m Connectivity(Connectivity)
+		:g (_r_2_12) [1,*] 
+			: Online(Online)
+				:g (_r_2_12_13_15) [1,*] 
+					: PSTN(PSTN)
+					: Mobile3G(Mobile3G)
+					: VPN(VPN)
+					: PrivateWAN(PrivateWAN)
+			: Offline(Offline)
+	:m CardReader(CardReader)
+		:g (_r_3_20) [1,*] 
+			: Chip(Chip)
+			: MagStrip(MagStrip)
+			: NFC(NFC)
+	:o Identification(Identification)
+		:o PIN(PIN)
+		:m Signature(Signature)
+</feature_tree>
+<constraints>
+constraint_1:Identification or ~CreditCard
+constraint_4:~PrepaidCard or Chip or NFC
+constraint_2:~DebitCard or PIN
+constraint_3:~EPurse or Chip or NFC
+</constraints>
+</feature_model>
