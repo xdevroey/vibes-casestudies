@@ -30,7 +30,7 @@ Devroey, X., Perrouin, G., Legay, A., Schobbens, P.-Y. and Heymans, P. 2016. [Se
 
 ## Feature Model
 
-![Card Payment Terminal Feature Model](cpterminal-fm)
+![Card Payment Terminal Feature Model](cpterminal-fm.png)
 
 ## Content:
 
