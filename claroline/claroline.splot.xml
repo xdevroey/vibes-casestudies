@@ -1,0 +1,226 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, May 23, 2014 - 9:26 AM  -->
+<feature_model name="Claroline">
+<meta>
+<data name="description">Claroline is an online web course platform manager</data>
+<data name="creator">Xavier Devroey</data>
+<data name="address"></data>
+<data name="email">xavier.devroey@unamur.be</data>
+<data name="phone"></data>
+<data name="website">https://staff.info.unamur.be/xde/fts-testing/</data>
+<data name="organization">Faculty of Computer Science, University of Namur</data>
+<data name="department">PReCISE Research Center</data>
+<data name="date"></data>
+<data name="reference">VaMoS 2014</data>
+</meta>
+<feature_tree>
+:r Claroline(Claroline)
+	:m User(User)
+		:g (_r_1_4) [1,1] 
+			: UnregistredUser(UnregistredUser)
+			: RegisteredUser(RegisteredUser)
+				:g (_r_1_4_6_7) [1,1] 
+					: Admin(Admin)
+					: Teacher(Teacher)
+					: Student(Student)
+	:m Course(Course)
+		:m Access(Access)
+			:g (_r_2_11_12) [1,1] 
+				: FreeAccess(FreeAccess)
+				: IdentifiedAccess(IdentifiedAccess)
+				: MemberAccess(MemberAccess)
+		:m Registration(Registration)
+			:g (_r_2_16_17) [1,1] 
+				: AllowedRegistration(AllowedRegistration)
+					:o WithValidationRegistration(WithValidationRegistration)
+					:o WithKeyRegistration(WithKeyRegistration)
+				: RegistrationDenied(RegistrationDenied)
+		:m Visibility(Visibility)
+			:g (_r_2_22_23) [1,1] 
+				: PublicVisibility(PublicVisibility)
+				: MembersVisibility(MembersVisibility)
+		:m Tools(Tools)
+			:m CourseIndex(CourseIndex)
+			:o CourseDescription(CourseDescription)
+			:o CourseAgenda(CourseAgenda)
+			:o CourseAnnoucements(CourseAnnoucements)
+			:o CourseDocument(CourseDocument)
+			:o CourseExercise(CourseExercise)
+			:o CourseLearnPath(CourseLearnPath)
+			:o CourseWork(CourseWork)
+			:o CourseForum(CourseForum)
+			:o CourseGroup(CourseGroup)
+			:o CourseUser(CourseUser)
+			:o CourseWiki(CourseWiki)
+			:o CourseDiscussion(CourseDiscussion)
+		:m Status(Status)
+			:g (_r_2_43_44) [1,1] 
+				: Available(Available)
+				: AvailableFromTo(AvailableFromTo)
+				: Unavailable(Unavailable)
+					:g (_r_2_43_44_47_48) [1,1] 
+						: ReactivableByOwner(ReactivableByOwner)
+						: ReactivableByAdmin(ReactivableByAdmin)
+						: Deleted(Deleted)
+	:m Subscription(Subscription)
+		:o LostPassword(LostPassword)
+		:o OpenSubscription(OpenSubscription)
+</feature_tree>
+<constraints>
+c1:~CourseAgenda or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c2:~CourseAgenda or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c3:~CourseAgenda or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c4:~CourseAgenda or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c5:~CourseAgenda or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c6:~CourseAgenda or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c7:~CourseAgenda or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c8:~CourseAgenda or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c9:~CourseAgenda or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c10:~CourseAgenda or PublicVisibility or MembersVisibility or Admin or Teacher
+c11:~CourseAgenda or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c12:~CourseAgenda or PublicVisibility or RegisteredUser or Admin or Teacher
+c13:~CourseAnnoucements or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c14:~CourseAnnoucements or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c15:~CourseAnnoucements or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c16:~CourseAnnoucements or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c17:~CourseAnnoucements or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c18:~CourseAnnoucements or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c19:~CourseAnnoucements or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c20:~CourseAnnoucements or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c21:~CourseAnnoucements or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c22:~CourseAnnoucements or PublicVisibility or MembersVisibility or Admin or Teacher
+c23:~CourseAnnoucements or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c24:~CourseAnnoucements or PublicVisibility or RegisteredUser or Admin or Teacher
+c25:~CourseDescription or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c26:~CourseDescription or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c27:~CourseDescription or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c28:~CourseDescription or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c29:~CourseDescription or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c30:~CourseDescription or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c31:~CourseDescription or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c32:~CourseDescription or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c33:~CourseDescription or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c34:~CourseDescription or PublicVisibility or MembersVisibility or Admin or Teacher
+c35:~CourseDescription or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c36:~CourseDescription or PublicVisibility or RegisteredUser or Admin or Teacher
+c37:~CourseDiscussion or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c38:~CourseDiscussion or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c39:~CourseDiscussion or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c40:~CourseDiscussion or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c41:~CourseDiscussion or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c42:~CourseDiscussion or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c43:~CourseDiscussion or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c44:~CourseDiscussion or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c45:~CourseDiscussion or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c46:~CourseDiscussion or PublicVisibility or MembersVisibility or Admin or Teacher
+c48:~CourseDiscussion or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c49:~CourseDiscussion or PublicVisibility or RegisteredUser or Admin or Teacher
+c50:~CourseDocument or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c51:~CourseDocument or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c52:~CourseDocument or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c53:~CourseDocument or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c54:~CourseDocument or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c55:~CourseDocument or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c56:~CourseDocument or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c57:~CourseDocument or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c58:~CourseDocument or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c59:~CourseDocument or PublicVisibility or MembersVisibility or Admin or Teacher
+c60:~CourseDocument or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c61:~CourseDocument or PublicVisibility or RegisteredUser or Admin or Teacher
+c62:~CourseExercise or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c63:~CourseExercise or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c64:~CourseExercise or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c65:~CourseExercise or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c66:~CourseExercise or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c67:~CourseExercise or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c68:~CourseExercise or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c69:~CourseExercise or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c70:~CourseExercise or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c71:~CourseExercise or PublicVisibility or MembersVisibility or Admin or Teacher
+c72:~CourseExercise or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c73:~CourseExercise or PublicVisibility or RegisteredUser or Admin or Teacher
+c74:~CourseForum or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c75:~CourseForum or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c76:~CourseForum or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c77:~CourseForum or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c78:~CourseForum or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c79:~CourseForum or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c80:~CourseForum or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c81:~CourseForum or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c82:~CourseForum or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c83:~CourseForum or PublicVisibility or MembersVisibility or Admin or Teacher
+c84:~CourseForum or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c85:~CourseForum or PublicVisibility or RegisteredUser or Admin or Teacher
+c86:~CourseGroup or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c87:~CourseGroup or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c88:~CourseGroup or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c89:~CourseGroup or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c90:~CourseGroup or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c91:~CourseGroup or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c92:~CourseGroup or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c93:~CourseGroup or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c94:~CourseGroup or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c95:~CourseGroup or PublicVisibility or MembersVisibility or Admin or Teacher
+c96:~CourseGroup or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c97:~CourseGroup or PublicVisibility or RegisteredUser or Admin or Teacher
+c98:~CourseIndex or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c99:~CourseIndex or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c100:~CourseIndex or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c101:~CourseIndex or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c102:~CourseIndex or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c103:~CourseIndex or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c104:~CourseIndex or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c105:~CourseIndex or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c106:~CourseIndex or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c107:~CourseIndex or PublicVisibility or MembersVisibility or Admin or Teacher
+c108:~CourseIndex or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c109:~CourseIndex or PublicVisibility or RegisteredUser or Admin or Teacher
+c110:~CourseLearnPath or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c111:~CourseLearnPath or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c112:~CourseLearnPath or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c113:~CourseLearnPath or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c114:~CourseLearnPath or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c115:~CourseLearnPath or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c116:~CourseLearnPath or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c117:~CourseLearnPath or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c118:~CourseLearnPath or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c119:~CourseLearnPath or PublicVisibility or MembersVisibility or Admin or Teacher
+c120:~CourseLearnPath or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c121:~CourseLearnPath or PublicVisibility or RegisteredUser or Admin or Teacher
+c122:~CourseUser or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c123:~CourseUser or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c124:~CourseUser or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c125:~CourseUser or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c126:~CourseUser or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c127:~CourseUser or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c128:~CourseUser or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c129:~CourseUser or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c130:~CourseUser or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c131:~CourseUser or PublicVisibility or MembersVisibility or Admin or Teacher
+c132:~CourseUser or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c133:~CourseUser or PublicVisibility or RegisteredUser or Admin or Teacher
+c134:~CourseWiki or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c135:~CourseWiki or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c136:~CourseWiki or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c137:~CourseWiki or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c138:~CourseWiki or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c139:~CourseWiki or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c140:~CourseWiki or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c141:~CourseWiki or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c142:~CourseWiki or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c143:~CourseWiki or PublicVisibility or MembersVisibility or Admin or Teacher
+c144:~CourseWiki or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c145:~CourseWiki or PublicVisibility or RegisteredUser or Admin or Teacher
+c146:~CourseWork or Available or AvailableFromTo or Available or AvailableFromTo or Admin or ReactivableByOwner
+c147:~CourseWork or Available or AvailableFromTo or Available or AvailableFromTo or Admin or Teacher
+c148:~CourseWork or Available or AvailableFromTo or MembersVisibility or Admin or ReactivableByOwner
+c149:~CourseWork or Available or AvailableFromTo or MembersVisibility or Admin or Teacher
+c150:~CourseWork or Available or AvailableFromTo or RegisteredUser or Admin or ReactivableByOwner
+c151:~CourseWork or Available or AvailableFromTo or RegisteredUser or Admin or Teacher
+c152:~CourseWork or PublicVisibility or Available or AvailableFromTo or Admin or ReactivableByOwner
+c153:~CourseWork or PublicVisibility or Available or AvailableFromTo or Admin or Teacher
+c154:~CourseWork or PublicVisibility or MembersVisibility or Admin or ReactivableByOwner
+c155:~CourseWork or PublicVisibility or MembersVisibility or Admin or Teacher
+c156:~CourseWork or PublicVisibility or RegisteredUser or Admin or ReactivableByOwner
+c157:~CourseWork or PublicVisibility or RegisteredUser or Admin or Teacher
+</constraints>
+</feature_model>

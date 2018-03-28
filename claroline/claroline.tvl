@@ -1,0 +1,207 @@
+/*
+	INFOS de SPLOT :
+	----------------
+	
+#Features	44
+#Mandatory	9
+#Optional	16
+#XOR groups	7
+#OR groups	0
+#Grouped	18
+#Cross-Tree Constraints (CTC)	156
+CTCR (%)	0.48
+#CTC distinct vars	21
+CTC clause density	7.43
+	
+	Core Features	10 feature(s)
+	Valid Configurations	5,406,720
+*/
+root Claroline {
+	group allof{
+		User,
+		Course,
+		Subscription		
+	}
+}
+
+/*
+ * The type of user loged in
+ */
+User{
+	group oneof{
+		UnregisteredUser,
+		RegisteredUser group oneof{
+			Admin,
+			Teacher,
+			Student
+		}
+	}
+}
+
+
+Course{
+	group allof {
+		Access group oneof{
+			FreeAccess,
+			IdentifiedAccess,
+			MembersAccess
+		},
+		Registration group oneof{
+			AllowedRegistration group allof{
+				opt WithValidationRegistration,
+				opt WithKeyRegistration
+			},			
+			RegistrationDenied
+		},
+		Visibility group oneof{
+			PublicVisibility,
+			MembersVisibility
+		},
+		Tools group allof{
+			CourseIndex, 			// /claroline/claroline/course/index.php
+			opt CourseDescription,	// /claroline/claroline/course_description/index.php
+			opt CourseAgenda,		// /claroline/claroline/calendar/agenda.php
+			opt CourseAnnoucements,	// /claroline/claroline/announcements/announcements.php
+			opt CourseDocument,		// /claroline/claroline/document/document.php
+			opt CourseExercise,		// /claroline/claroline/exercise/exercise.php
+			opt CourseLearnPath,	// /claroline/claroline/learnPath/learningPathList.php
+			opt CourseWork,			// /claroline/claroline/work/work.php
+			opt CourseForum,		// /claroline/claroline/phpbb/index.php
+			opt CourseGroup, 		// /claroline/claroline/group/group.php
+			opt CourseUser,			// /claroline/claroline/user/user.php
+			opt CourseWiki,			// /claroline/claroline/wiki/wiki.php
+			opt CourseDiscussion	// /claroline/module/CLCHAT/index.php
+		},
+		Status group oneof{
+			Available,
+			AvailableFromTo,
+			Unavailable group oneOf{
+				ReactivableByOwner,
+				ReactivableByAdmin,
+				Deleted
+			}
+		}
+	}
+}
+
+CourseIndex{
+	CourseIndex -> ((Available || AvailableFromTo) && PublicVisibility)
+			|| ((Available || AvailableFromTo) && MembersVisibility && RegisteredUser)
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseDescription{
+	CourseDescription -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseAgenda{
+	CourseAgenda -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseAnnoucements{
+	CourseAnnoucements -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseDocument{
+	CourseDocument -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseExercise{
+	CourseExercise -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseLearnPath{
+	CourseLearnPath -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseWork{
+	CourseWork -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseForum{
+	CourseForum -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseGroup{
+	CourseGroup -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseUser{
+	CourseUser -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseWiki{
+	CourseWiki -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+CourseDiscussion{
+	CourseDiscussion -> ((Available || AvailableFromTo) 
+				&& ((FreeAccess && PublicVisibility) 
+						|| (IdentifiedAccess && PublicVisibility && RegisteredUser)
+						|| (MembersAccess && RegisteredUser) )) 
+			|| Admin 
+			|| (ReactivableByOwner && Teacher);
+}
+
+Subscription{	
+	group allof{
+		opt OpenSubscription, 	// /claroline/claroline/auth/inscription.php
+		opt LostPassword
+	}
+}
