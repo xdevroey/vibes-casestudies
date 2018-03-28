@@ -1,0 +1,57 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, Oct 23, 2014 - 4:32 AM  -->
+<feature_model name="AeroUc5">
+<meta>
+<data name="description"></data>
+<data name="creator">Xavier Devroey</data>
+<data name="address"></data>
+<data name="email">xavier.devroey@unamur.be</data>
+<data name="phone"></data>
+<data name="website">https://sites.google.com/site/xdevroey/home</data>
+<data name="organization">PReCISE</data>
+<data name="department">University of Namur</data>
+<data name="date">23/10/2014</data>
+<data name="reference">Samih, Hamza; Bogusch, Ralf MPLM -- MaTeLo Product Line Manager. 18th International Software Product Line Conference (2014), Florence, Italie, 2014.</data>
+</meta>
+<feature_tree>
+:r AeroUc5(AeroUc5)
+	:m Display_reference_objects_in_landing_zone(Display_reference_objects_in_landing_zone)
+		:m Display_visual_3D_cues(Display_visual_3D_cues)
+		:o Display_real_reference_objects(Display_real_reference_objects)
+	:m Mark_landing_position(Mark_landing_position)
+		:m Check_for_no_ground(Check_for_no_ground)
+		:m Mark_LP(Mark_LP)
+			:g (_r_2_12_14) [1,1] 
+				: Mark_LP_by_handling_pilot_only(Mark_LP_by_handling_pilot_only)
+				: Mark_LP_by_both_pilots(Mark_LP_by_both_pilots)
+		:o Check_for_obstacles(Check_for_obstacles)
+	:m Database(Database)
+		:g (_r_3_23) [1,1] 
+			: DB_provided_by_customer(DB_provided_by_customer)
+			: DB_provided_by_Cassidian(DB_provided_by_Cassidian)
+	:m HOCAS(HOCAS)
+		:g (_r_4_17) [1,1] 
+			: HOCAS_GE_Aviation_Systems(HOCAS_GE_Aviation_Systems)
+			: HOCAS_Honeywell(HOCAS_Honeywell)
+	:m HMS_D(HMS_D)
+		:g (_r_5_20) [1,1] 
+			: HMS_D_Thales(HMS_D_Thales)
+			: HMS_D_Elbit(HMS_D_Elbit)
+	:m OWS(OWS)
+		:g (_r_7_26) [1,1] 
+			: ELOP(ELOP)
+			: HELLAS(HELLAS)
+	:m Provide_slope_indication_for_LP(Provide_slope_indication_for_LP)
+		:g (_r_8_29) [1,1] 
+			: SI_sensor_based(SI_sensor_based)
+			: SI_from_DB(SI_from_DB)
+</feature_tree>
+<constraints>
+constraint_8: Mark_landing_position or ~Provide_slope_indication_for_LP
+constraint_10: OWS or ~SI_sensor_based
+constraint_9: Database or ~SI_from_DB
+constraint_6: ~Mark_landing_position or HMS_D
+constraint_7: ~OWS or Check_for_obstacles
+constraint_5: ~Mark_landing_position or HOCAS
+constraint_2: ~OWS or Display_real_reference_objects
+</constraints>
+</feature_model>

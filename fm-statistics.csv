@@ -1,0 +1,12 @@
+file,model,featurescount,commonfeaturescount,deadfeaturescount,mandatoryfeaturescount,optionalfeaturescount,constraintscount,configurationscount
+aerouc5.splot.xml,aerouc5,25,13,0,10,2,7,64.000
+ageRR.splot.xml,ageRR,45,1,0,0,3,0,4.3980e+12
+ageRRN.splot.xml,ageRRN,45,1,0,0,3,0,4.3980e+12
+ageRRNV.splot.xml,ageRRNV,45,1,0,0,3,0,4.3980e+12
+claroline.splot.xml,claroline,44,10,0,9,16,156,5.4067e+06
+cpterminal.splot.xml,cpterminal,21,4,0,4,2,4,4774.0
+elsaRR.splot.xml,elsaRR,70,1,0,0,3,0,1.4757e+20
+elsaRRN.splot.xml,elsaRRN,70,1,0,0,3,0,1.4757e+20
+elsaRRNV.splot.xml,elsaRRNV,70,1,0,0,3,0,1.4757e+20
+minepump.splot.xml,minepump,9,3,0,2,4,0,32.000
+svm.splot.xml,svm,9,3,0,2,2,0,24.000
