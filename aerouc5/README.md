@@ -14,7 +14,7 @@ We encoded the Sferion(TM)  landing symbology function models using our formalis
 
 Devroey, X., Perrouin, G., Cordy, M., Samih, H., Legay, A., Schobbens, P.-Y. and Heymans, P. 2017. [Statistical prioritization for software product line testing: an experience report](https://doi.org/10.1007/s10270-015-0479-8). Software & Systems Modeling. 16, 1 (Feb. 2017), 153–171.
 
-```
+```TeX
 @article{Devroey2017,
 	author = {Devroey, Xavier and Perrouin, Gilles and Cordy, Maxime and Samih, Hamza and Legay, Axel and Schobbens, Pierre-Yves and Heymans, Patrick},
 	title = {{Statistical prioritization for software product line testing: an experience report}},
