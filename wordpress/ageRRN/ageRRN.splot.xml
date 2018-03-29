@@ -1,0 +1,69 @@
+<!--
+ Generated on Fri Aug 05 14:24:05 CEST 2016
+ using VIBeS (https://projects.info.unamur.be/vibes/)
+ -->
+<feature_model name="AgeRRN/ageRRN.splot.xml">
+<meta>
+<data name="description"></data>
+<data name="creator">Xavier Devroey</data>
+<data name="address"></data>
+<data name="email">xavier.devroey@unamur.be</data>
+<data name="phone"></data>
+<data name="website">https://sites.google.com/site/xdevroey/home</data>
+<data name="organization">PReCISE</data>
+<data name="department">University of Namur</data>
+<data name="date">05/08/2016</data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r AgeRRN/ageRRN.splot.xml (AgeRRN/ageRRN.splot.xml)
+	:o Plugins (Plugins)
+		:g (plugins_group) [1,*] 
+			: Facebook_plugin (Facebook_plugin)
+			: A1_flash_gallery_plugin (A1_flash_gallery_plugin)
+			: Wpstorecart_plugin (Wpstorecart_plugin)
+			: Gtw_plugin (Gtw_plugin)
+			: Wp_bing_plugin (Wp_bing_plugin)
+			: Wp_sed_plugin (Wp_sed_plugin)
+			: Hotfix_plugin (Hotfix_plugin)
+			: Mini_mail_dashboard_widget_plugin (Mini_mail_dashboard_widget_plugin)
+			: Theme_plugin (Theme_plugin)
+			: Google_calendar_widget_plugin (Google_calendar_widget_plugin)
+			: Zingiri_web_shop_plugin (Zingiri_web_shop_plugin)
+			: Akismet_plugin (Akismet_plugin)
+			: Mm_forms_community_plugin (Mm_forms_community_plugin)
+			: Thecartpress_plugin (Thecartpress_plugin)
+			: Braille_plugin (Braille_plugin)
+			: Premium_Gallery_Manager_plugin (Premium_Gallery_Manager_plugin)
+			: Lazy_seo_plugin (Lazy_seo_plugin)
+			: Reflex_gallery_plugin (Reflex_gallery_plugin)
+			: Tell_a_friend_plugin (Tell_a_friend_plugin)
+			: Wp_404_plugin (Wp_404_plugin)
+			: Formidable_plugin (Formidable_plugin)
+			: Wp_mailinglist_plugin (Wp_mailinglist_plugin)
+			: News_plugin_plugin (News_plugin_plugin)
+			: Likebtn_like_button_plugin (Likebtn_like_button_plugin)
+			: Jetpack_plugin (Jetpack_plugin)
+	:o Themes (Themes)
+		:g (themes_group) [1,*] 
+			: Karma_theme (Karma_theme)
+			: Toolbox_theme (Toolbox_theme)
+			: Sportpress_theme (Sportpress_theme)
+			: Clockstone_theme (Clockstone_theme)
+			: Deep_blue_theme (Deep_blue_theme)
+			: Max_theme (Max_theme)
+			: Avenue_theme (Avenue_theme)
+			: Maintheme_theme (Maintheme_theme)
+			: Kiddo_theme (Kiddo_theme)
+			: Yoko_theme (Yoko_theme)
+			: Twentytwelve_theme (Twentytwelve_theme)
+			: U_design_theme (U_design_theme)
+			: Purevision_theme (Purevision_theme)
+			: Twentyeleven_theme (Twentyeleven_theme)
+			: Twentyten_theme (Twentyten_theme)
+			: OptimizePress_theme (OptimizePress_theme)
+	:o Admin_user (Admin_user)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>

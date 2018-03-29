@@ -21,9 +21,8 @@ Devroey, X., Perrouin, G., Cordy, M., Samih, H., Legay, A., Schobbens, P.-Y. and
 	number = {1},
 	pages = {153--171},
 	month = {feb},
-	year = {2017}
-	publisher = {Springer},
-	doi = {10.1007/s10270-015-0479-8},
+	year = {2017},
+	publisher = {Springer}
 }
 ```
 

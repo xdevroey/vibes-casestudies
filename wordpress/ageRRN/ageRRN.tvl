@@ -1,0 +1,63 @@
+/*
+ * Generated on Fri Aug 05 14:24:05 CEST 2016
+ * using VIBeS (https://projects.info.unamur.be/vibes/)
+ */
+
+root AgeRRN/ageRRN {
+    group someof {
+        Plugins,
+        Themes,
+        Admin_user
+    }
+}
+
+Plugins {
+    group [1..*] {
+        Facebook_plugin,
+        A1_flash_gallery_plugin,
+        Wpstorecart_plugin,
+        Gtw_plugin,
+        Wp_bing_plugin,
+        Wp_sed_plugin,
+        Hotfix_plugin,
+        Mini_mail_dashboard_widget_plugin,
+        Theme_plugin,
+        Google_calendar_widget_plugin,
+        Zingiri_web_shop_plugin,
+        Akismet_plugin,
+        Mm_forms_community_plugin,
+        Thecartpress_plugin,
+        Braille_plugin,
+        Premium_Gallery_Manager_plugin,
+        Lazy_seo_plugin,
+        Reflex_gallery_plugin,
+        Tell_a_friend_plugin,
+        Wp_404_plugin,
+        Formidable_plugin,
+        Wp_mailinglist_plugin,
+        News_plugin_plugin,
+        Likebtn_like_button_plugin,
+        Jetpack_plugin
+    }
+}
+
+Themes {
+    group [1..*] {
+        Karma_theme,
+        Toolbox_theme,
+        Sportpress_theme,
+        Clockstone_theme,
+        Deep_blue_theme,
+        Max_theme,
+        Avenue_theme,
+        Maintheme_theme,
+        Kiddo_theme,
+        Yoko_theme,
+        Twentytwelve_theme,
+        U_design_theme,
+        Purevision_theme,
+        Twentyeleven_theme,
+        Twentyten_theme,
+        OptimizePress_theme
+    }
+}

@@ -2,11 +2,9 @@ model,name,actionscount,transitionscount,avgdegree,bfsheight,backlvltransitionsc
 aerouc5,Sferion(TM) Aero UC5,12,46,1.84,16,14,25
 ageRR,Wordpress AGE (RR reverse),773,6639,8.59,329,411,772
 ageRRN,Wordpress AGE (RRN reverse),1102,10960,9.95,425,664,1101
-ageRRNV,Wordpress AGE (RRNV reverse),18389,103815,5.65,9217,10602,18388
 claroline,Claroline,107,2053,19.37,1,105,106
 cpterminal,Card payement terminal,16,17,1.54,7,4,11
 elsaRR,Wordpress Elsa (RR reverse),385,1214,3.16,195,174,384
 elsaRRN,Wordpress Elsa (RRN reverse),618,1771,2.88,371,297,615
-elsaRRNV,Wordpress Elsa (RRNV reverse),1147,2698,2.35,684,568,1146
 minepump, Mine pump,24,41,1.64,15,9,25
 svm,Soda vending machine,13,13,1.44,5,3,9

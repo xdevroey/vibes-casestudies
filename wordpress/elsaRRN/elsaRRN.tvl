@@ -1,0 +1,88 @@
+/*
+ * Generated on Fri Aug 05 14:24:39 CEST 2016
+ * using VIBeS (https://projects.info.unamur.be/vibes/)
+ */
+
+root ElsaRRN/elsaRRN {
+    group someof {
+        Plugins,
+        Themes,
+        Admin_user
+    }
+}
+
+Plugins {
+    group [1..*] {
+        Magn_html5_drag_and_drop_media_uploader_plugin,
+        Uploader_plugin,
+        Wp_powerplaygallery_plugin,
+        Php_analytics_plugin,
+        Wp_filemanager_plugin,
+        Font_uploader_plugin,
+        Wp_image_news_slider_plugin,
+        Smart_slide_show_plugin,
+        Php_shell_plugin,
+        Front_end_upload_plugin,
+        Asset_manager_plugin,
+        Rent_a_car_plugin,
+        Pdw_file_browser_plugin,
+        Annonces_plugin,
+        Wp_3dflick_slideshow_plugin,
+        Wp_levoslideshow_plugin,
+        Thecartpress_plugin,
+        Wp_z1_plugin,
+        Rich_widget_plugin,
+        Omni_secure_files_plugin,
+        Islidex_plugin,
+        Videowhisper_video_presentation_plugin,
+        Contus_video_galleryversion_10_plugin,
+        Drag_drop_file_uploader_plugin,
+        Lisl_last_image_slider_plugin,
+        Wp_royal_gallery_plugin,
+        Open_flash_chart_core_wordpress_plugin_plugin,
+        Front_file_manager_plugin,
+        Invit0r_plugin,
+        Picturesurf_gallery_plugin,
+        Wpstorecart_plugin,
+        A1_flash_gallery_plugin,
+        Wp_file_uploader_plugin,
+        Backwpup_plugin,
+        Mini_mail_dashboard_widget_plugin,
+        Mod_menu1_plugin,
+        Spamtask_plugin,
+        Wp_z_plugin,
+        Zingiri_web_shop_plugin,
+        Resume_submissions_job_postings_plugin,
+        Chikuncount_plugin,
+        Mm_forms_community_plugin,
+        Akismet_plugin,
+        Downloads_manager_plugin,
+        Cac_featured_content_plugin,
+        Simple_dropbox_upload_form_plugin,
+        Monsters_editor_10_for_wp_super_edit_plugin,
+        Category_grid_view_gallery_plugin,
+        Wp_homepage_slideshow_plugin,
+        Extend_wordpress_plugin,
+        Lb_mixed_slideshow_plugin,
+        Rbxgallery_plugin,
+        Videowhisper_video_conference_integration_plugin,
+        Advanced_custom_fields_plugin,
+        Tell_a_friend_plugin,
+        Wp_property_plugin,
+        Map_wid_plugin,
+        Is_human_plugin,
+        Evarisk_plugin,
+        Wp_mailinglist_plugin,
+        Gallery_plugin_plugin,
+        Dp_thumbnail_plugin,
+        Hungred_post_thumbnail_plugin
+    }
+}
+
+Themes {
+    group [1..*] {
+        Clockstone_theme,
+        Deep_blue_theme,
+        OptimizePress_theme
+    }
+}
