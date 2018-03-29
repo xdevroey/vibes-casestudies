@@ -8,6 +8,23 @@
 
 We reverse-engineered the feature models and the FTSs of two WordPress instances, AGE and Elsa portals, based on their Apache webserver log file. The [AGE website](http://www.age-namur.be) is the portal of the general student assembly of the University of Namur. It uses a dedicated WordPress instance and provided us a log file with 1,285,592 entries from May 2013 to March 2014. The [European Law Students' Association (Elsa) of Louvain-la-Neuve](http://elsa-lln.be) also uses a dedicated WordPress instance and provided us a log with 48,823 entries from February 2014 to the end of April 2014.
 
+### Reference
+
+Devroey, X., Perrouin, G., Papadakis, M., Legay, A., Schobbens, P.-Y. and Heymans, P. 2018. [Model-based mutant equivalence detection using automata language equivalence and simulations](https://doi.org/10.1016/j.jss.2018.03.010). Journal of Systems and Software. 141, (Jul. 2018), 1–15.
+
+```TeX
+@article{Devroey2018,
+	author = {Devroey, Xavier and Perrouin, Gilles and Papadakis, Mike and Legay, Axel and Schobbens, Pierre-Yves and Heymans, Patrick},
+	title = {{Model-based mutant equivalence detection using automata language equivalence and simulations}},
+	journal = {Journal of Systems and Software},
+	year = {2018},
+	month = {jul},
+	volume = {141},
+	pages = {1--15},
+	publisher = {Elsevier}
+}
+```
+
 ## Feature Model
 
 ![Wordpress Simplified Feature Model](wordpress-simplified-fm.png)
@@ -46,7 +63,7 @@ To build the user sessions, we only consider some relevant elements of the HTTP 
 - Request type and Resource (RR), which uses the type of HTTP request (e.g., `POST` or `GET`) and the resource name (e.g., `/index.php`) for a user session element;
 - Request type, Resource, and parameters Names (RRN), which also uses the HTTP request type and the name of the resource, but also the name of the parameters in the resource (e.g., `?p=&action=&id=`).
 
-#### Bigram inference
+### Bigram inference
 
 ![Bigram Inference Algorithm](bigram-algo.png)
 
@@ -58,20 +75,3 @@ This process iterates for each request in the sequence, the starting state corre
 
 We built four FTSs: two using Request type and Resource (RR) parts of the URLs as sequence elements in the user sessions (*AGE-RR* with 772 states and 6,639 transitions, and *Elsa-RR* with 384 states and 1,214 transitions), and two using Request type, Resource, and parameter Names (RRN) parts of the URLs (*AGE-RRN* with 1,101 states and 10,960 transitions, and *Elsa-RRN* with 615 states and 1,771 transitions). The process took 3 seconds to process the 3,964 sessions of the Elsa models (average session size=9.57, *sigma*=46.73) and 54 second to build the 147,173 sessions of the AGE models (average session size=5.10, *sigma*=61.04) on a Ubuntu Linux machine (Linux version 3.13.0-65-generic, Ubuntu 4.8.2-19ubuntu1) with an Intel Core i3 (3.10GHz) processor and 4GB of memory.
 
-
-## Reference
-
-Devroey, X., Perrouin, G., Papadakis, M., Legay, A., Schobbens, P.-Y. and Heymans, P. 2018. [Model-based mutant equivalence detection using automata language equivalence and simulations](https://doi.org/10.1016/j.jss.2018.03.010). Journal of Systems and Software. 141, (Jul. 2018), 1–15.
-
-```TeX
-@article{Devroey2018,
-	author = {Devroey, Xavier and Perrouin, Gilles and Papadakis, Mike and Legay, Axel and Schobbens, Pierre-Yves and Heymans, Patrick},
-	title = {{Model-based mutant equivalence detection using automata language equivalence and simulations}},
-	journal = {Journal of Systems and Software},
-	year = {2018},
-	month = {jul},
-	volume = {141},
-	pages = {1--15},
-	publisher = {Elsevier}
-}
-```
