@@ -38,7 +38,7 @@ Devroey, X., Perrouin, G., Legay, A., Schobbens, P.-Y. and Heymans, P. 2016. [Se
 - cpterminal.png: a graphical representation of the variability model
 - cpterminal.splot.xml: the variability model encoded in SPLOT (http://www.splot-research.org)
 - cpterminal.splot.dimacs: the dimacs representation of the variability model, generated from PLEDGE (http://research.henard.net/SPL/PLEDGE/)
-- cpterminal.usagemodel: the usage model derived from claroline-RR.usagemodel to match actions in claroline.fts
+- cpterminal.usagemodel: the handcrafted usage model
 - cpterminal.fts: the FTS
 - cpterm-fm-simplified.pdf: a simplified feature model.
 - cpterm-fts-simplified.pdf: a simplified featured transition system.

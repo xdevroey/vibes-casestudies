@@ -1,0 +1,29 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, Oct 23, 2014 - 4:09 AM  -->
+<feature_model name="MinePump">
+<meta>
+<data name="description"></data>
+<data name="creator">Xavier Devroey</data>
+<data name="address"></data>
+<data name="email">xavier.devroey@unamur.be</data>
+<data name="phone"></data>
+<data name="website">https://sites.google.com/site/xdevroey/</data>
+<data name="organization">University of Namur</data>
+<data name="department">PReCISE</data>
+<data name="date">23/10/2014</data>
+<data name="reference">Classen, A. Modelling with FTS: a Collection of Illustrative Examples. Technical Report P-CS-TR SPLMC-00000001, PReCISE Research Center, University of Namur, Namur, Belgium, 2010.</data>
+</meta>
+<feature_tree>
+:r MinePumpSys(MinePumpSys)
+	:o Command(Command)
+		:g (_r_1_12) [1,*] 
+			: Start(Start)
+			: Stop(Stop)
+	:m WaterRegulation(WaterRegulation)
+		:o Low(Low)
+		:o Normal(Normal)
+		:m High(High)
+	:o MethaneDetect(MethaneDetect)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>

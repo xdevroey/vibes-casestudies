@@ -1,0 +1,61 @@
+/*
+titane:cases-studies xde$ java -jar tools/TVLParser.jar -prods minepump/minepump.tvl 
+Found 32 products(s); maybe with duplicates.
+ - MinePumpSys, WaterRegulation, High
+ - MinePumpSys, Command, Start, WaterRegulation, High
+ - MinePumpSys, Command, Stop, WaterRegulation, High
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, High
+ - MinePumpSys, WaterRegulation, Low, High
+ - MinePumpSys, Command, Start, WaterRegulation, Low, High
+ - MinePumpSys, Command, Stop, WaterRegulation, Low, High
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, Low, High
+ - MinePumpSys, WaterRegulation, Normal, High
+ - MinePumpSys, Command, Start, WaterRegulation, Normal, High
+ - MinePumpSys, Command, Stop, WaterRegulation, Normal, High
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, Normal, High
+ - MinePumpSys, WaterRegulation, Low, Normal, High
+ - MinePumpSys, Command, Start, WaterRegulation, Low, Normal, High
+ - MinePumpSys, Command, Stop, WaterRegulation, Low, Normal, High
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, Low, Normal, High
+ - MinePumpSys, WaterRegulation, High, MethaneDetect
+ - MinePumpSys, Command, Start, WaterRegulation, High, MethaneDetect
+ - MinePumpSys, Command, Stop, WaterRegulation, High, MethaneDetect
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, High, MethaneDetect
+ - MinePumpSys, WaterRegulation, Low, High, MethaneDetect
+ - MinePumpSys, Command, Start, WaterRegulation, Low, High, MethaneDetect
+ - MinePumpSys, Command, Stop, WaterRegulation, Low, High, MethaneDetect
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, Low, High, MethaneDetect
+ - MinePumpSys, WaterRegulation, Normal, High, MethaneDetect
+ - MinePumpSys, Command, Start, WaterRegulation, Normal, High, MethaneDetect
+ - MinePumpSys, Command, Stop, WaterRegulation, Normal, High, MethaneDetect
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, Normal, High, MethaneDetect
+ - MinePumpSys, WaterRegulation, Low, Normal, High, MethaneDetect
+ - MinePumpSys, Command, Start, WaterRegulation, Low, Normal, High, MethaneDetect
+ - MinePumpSys, Command, Stop, WaterRegulation, Low, Normal, High, MethaneDetect
+ - MinePumpSys, Command, Start, Stop, WaterRegulation, Low, Normal, High, MethaneDetect
+*/
+
+root MinePumpSys {
+	group allof {
+		opt Command,
+		opt MethaneDetect,
+		WaterRegulation
+	}
+} 
+
+ 
+root Command {
+	group someof {
+		Start,
+		Stop
+	}
+} 
+
+ 
+root WaterRegulation {
+	group allof {
+		opt Low,
+		opt Normal,
+		High
+	}
+} 

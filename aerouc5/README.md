@@ -40,7 +40,7 @@ Devroey, X., Perrouin, G., Cordy, M., Samih, H., Legay, A., Schobbens, P.-Y. and
 - aerouc5.splot.xml: the variability model encoded in SPLOT (http://www.splot-research.org)
 - aerouc5.splot.dimacs: the dimacs representation of the variability model, generated from PLEDGE (http://research.henard.net/SPL/PLEDGE/)
 - aerouc5-fd.png: a graphical representation of the variability model
-- aerouc5.usagemodel: the usage model
+- aerouc5.usagemodel: the handcrafted usage model
 - aerouc5.fts: the FTS
 - aerouc5.ts: the TS corresponding to the FTS without any feature expression (used for testing purpose only)
 

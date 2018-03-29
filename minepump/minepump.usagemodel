@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ts>
+	<start>s6</start>
+	<states>
+		<state id="s6">
+			<transition target="s7" action="receiveMsg" proba="1.0"/>
+		</state>
+		<state id="s7">
+			<transition target="s8" action="commandMsg" proba="0.333"/>
+			<transition target="s16" action="palarmMsg" proba="0.334"/>
+			<transition target="s20" action="levelMsg" proba="0.333"/>
+		</state>
+		<state id="s8">
+			<transition target="s9" action="stopCmd"  proba="0.5"/>
+			<transition target="s13" action="startCmd" proba="0.5"/>
+		</state>
+		<state id="s9">
+			<transition target="s10" action="isRunning" proba="0.5"/>
+			<transition target="s11" action="isNotRunning" proba="0.5"/>
+		</state>
+		<state id="s10">
+			<transition target="s11" action="pumpStop" proba="1.0"/>
+		</state>
+		<state id="s11">
+			<transition target="s12" action="setStop" proba="1.0"/>
+		</state>
+		<state id="s12">
+			<transition target="s6" action="end" proba="1.0"/>
+		</state>
+		<state id="s13">
+			<transition target="s14" action="isNotRunning" proba="0.334"/>
+			<transition target="s15" action="isRunning" proba="0.333"/>
+			<transition target="s15" action="isReady" proba="0.333"/>
+		</state>
+		<state id="s14">
+			<transition target="s15" action="setReady" proba="1.0"/>
+		</state>
+		<state id="s15">
+			<transition target="s6" action="end" proba="1.0"/>
+		</state>
+		<state id="s16">
+			<transition target="s17" action="isRunning" proba="0.5"/>
+			<transition target="s18" action="isNotRunning" proba="0.5"/>
+		</state>
+		<state id="s17">
+			<transition target="s18" action="pumpStop" proba="1.0"/>
+		</state>
+		<state id="s18">
+			<transition target="s19" action="setMethaneStop" proba="1.0"/>
+		</state>
+		<state id="s19">
+			<transition target="s6" action="end" proba="1.0"/>
+		</state>
+		<state id="s20">
+			<transition target="s6" action="end" proba="0.333"/>
+			<transition target="s21" action="highLevel" proba="0.333"/>
+			<transition target="s27" action="lowLevel" proba="0.334"/>
+		</state>
+		<state id="s21">
+			<transition target="s22" action="isReady" proba="0.2"/>
+			<transition target="s22" action="isLowStop" proba="0.2"/>
+			<transition target="s26" action="isRunning" proba="0.2"/>
+			<transition target="s26" action="isStopped" proba="0.2"/>
+			<transition target="s26" action="isMethaneStop" proba="0.2"/>
+		</state>
+		<state id="s22">
+			<transition target="s23" action="setReady" proba="0.5"/>
+			<transition target="s23" action="setMethaneStop" proba="0.5"/>
+		</state>
+		<state id="s23">
+			<transition target="s24" action="isReady" proba="0.5"/>
+			<transition target="s26" action="isNotReady" proba="0.5"/>
+		</state>
+		<state id="s24">
+			<transition target="s25" action="pumpStart" proba="1.0"/>
+		</state>
+		<state id="s25">
+			<transition target="s26" action="setRunning" proba="1.0"/>
+		</state>
+		<state id="s26">
+			<transition target="s6" action="end" proba="1.0"/>
+		</state>
+		<state id="s27">
+			<transition target="s28" action="isRunning" proba="0.5"/>
+			<transition target="s30" action="isNotRunning" proba="0.5"/>
+		</state>
+		<state id="s28">
+			<transition target="s29" action="pumpStop" proba="1.0"/>
+		</state>
+		<state id="s29">
+			<transition target="s30" action="setLowStop" proba="1.0"/>
+		</state>
+		<state id="s30">
+			<transition target="s6" action="end" proba="1.0"/>
+		</state>
+	</states>			
+</ts>
