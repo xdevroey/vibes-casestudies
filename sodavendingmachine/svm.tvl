@@ -1,0 +1,59 @@
+/*
+titane:Desktop xde$ java -jar TVLParser.jar -prods soda-vending-machine.tvl 
+Found 24 products(s); maybe with duplicates.
+ - VendingMachine, Beverages, Tea, Currency, Euro
+ - VendingMachine, CancelPruchase, Beverages, Tea, Currency, Euro
+ - VendingMachine, Beverages, Soda, Currency, Euro
+ - VendingMachine, CancelPruchase, Beverages, Soda, Currency, Euro
+ - VendingMachine, Beverages, Tea, Soda, Currency, Euro
+ - VendingMachine, CancelPruchase, Beverages, Tea, Soda, Currency, Euro
+ - VendingMachine, Beverages, Tea, FreeDrinks, Currency, Euro
+ - VendingMachine, CancelPruchase, Beverages, Tea, FreeDrinks, Currency, Euro
+ - VendingMachine, Beverages, Soda, FreeDrinks, Currency, Euro
+ - VendingMachine, CancelPruchase, Beverages, Soda, FreeDrinks, Currency, Euro
+ - VendingMachine, Beverages, Tea, Soda, FreeDrinks, Currency, Euro
+ - VendingMachine, CancelPruchase, Beverages, Tea, Soda, FreeDrinks, Currency, Euro
+ - VendingMachine, Beverages, Soda, Currency, Dollar
+ - VendingMachine, Beverages, Tea, Currency, Dollar
+ - VendingMachine, CancelPruchase, Beverages, Tea, Currency, Dollar
+ - VendingMachine, CancelPruchase, Beverages, Soda, Currency, Dollar
+ - VendingMachine, Beverages, Tea, Soda, Currency, Dollar
+ - VendingMachine, CancelPruchase, Beverages, Tea, Soda, Currency, Dollar
+ - VendingMachine, Beverages, Tea, FreeDrinks, Currency, Dollar
+ - VendingMachine, CancelPruchase, Beverages, Tea, FreeDrinks, Currency, Dollar
+ - VendingMachine, Beverages, Soda, FreeDrinks, Currency, Dollar
+ - VendingMachine, CancelPruchase, Beverages, Soda, FreeDrinks, Currency, Dollar
+ - VendingMachine, Beverages, Tea, Soda, FreeDrinks, Currency, Dollar
+ - VendingMachine, CancelPruchase, Beverages, Tea, Soda, FreeDrinks, Currency, Dollar
+
+ */
+ 
+root VendingMachine {
+	
+	/* La conjonction de feature expressions est ICI :-) 
+	
+	(!FreeDrinks) && (CancelPurchase) && (Tea); */
+	
+	group allof {
+		opt CancelPurchase,
+		Beverages,
+		opt FreeDrinks,
+		Currency
+	}
+} 
+
+ 
+root Beverages {
+	group someof {
+		Soda,
+		Tea
+	}
+} 
+
+ 
+root Currency {
+	group oneof {
+		Euro,
+		Dollar
+	}
+} 

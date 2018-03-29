@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ts xmlns:um="http://www.unamur.be/fts/test/dtmc/usagemodel">
+	<start>state1</start>
+	<state id="state1">
+		<transition target="state2" action="pay" proba="0.1"/>
+		<transition target="state3" action="free" proba="0.9"/>
+	</state>
+	<state id="state2">
+		<transition target="state3" action="change" proba="1"/>
+	</state>
+	<state id="state3">
+		<transition target="state4" action="cancel" proba="0.1"/>
+		<transition target="state6" action="tea" proba="0.9"/>
+	</state>
+	<state id="state4">
+		<transition target="state1" action="return" proba="1"/>
+	</state>
+	<state id="state6">
+		<transition target="state7" action="serveTea" proba="1"/>
+	</state>
+	<state id="state7">
+		<transition target="state8" action="open" proba="0.1"/>
+		<transition target="state1" action="take" proba="0.9"/>
+	</state>
+	<state id="state8">
+		<transition target="state9" action="take" proba="1"/>
+	</state>
+	<state id="state9">
+		<transition target="state1" action="close" proba="1"/>
+	</state>
+</ts>

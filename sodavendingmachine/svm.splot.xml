@@ -1,0 +1,30 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, Oct 23, 2014 - 4:40 AM  -->
+<feature_model name="VendingMachine">
+<meta>
+<data name="description"></data>
+<data name="creator">Xavier Devroey</data>
+<data name="address"></data>
+<data name="email">xavier.devroey@unamur.be</data>
+<data name="phone"></data>
+<data name="website">https://sites.google.com/site/xdevroey/home</data>
+<data name="organization">University of Namur</data>
+<data name="department">PReCISE</data>
+<data name="date">23/10/2014</data>
+<data name="reference">Classen, A. Modelling with FTS: a Collection of Illustrative Examples. Technical Report P-CS-TR SPLMC-00000001, PReCISE Research Center, University of Namur, Namur, Belgium, 2010.</data>
+</meta>
+<feature_tree>
+:r VendingMachine(VendingMachine)
+	:o CancelPurchase(CancelPurchase)
+	:m Beverages(Beverages)
+		:g (_r_2_8) [1,*] 
+			: Soda(Soda)
+			: Tea(Tea)
+	:o FreeDrinks(FreeDrinks)
+	:m Currency(Currency)
+		:g (_r_4_5) [1,1] 
+			: Euro(Euro)
+			: Dollar(Dollar)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>
